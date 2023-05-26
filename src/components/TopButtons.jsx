@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Renders the top buttons for selecting predefined cities.
+ * @param {Object} props - The component props.
+ * @param {Function} props.setQuery - A function to set the search query for weather information.
+ * @returns {JSX.Element} The rendered TopButtons component.
+ */
 function TopButtons({ setQuery }) {
   const cities = [
     {

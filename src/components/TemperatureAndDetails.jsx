@@ -8,6 +8,23 @@ import {
 } from "@iconscout/react-unicons";
 import { formatToLocalTime, iconUrlFromCode } from "../services/weatherService";
 
+/**
+ * Renders the temperature and weather details for a specific location.
+ * @param {Object} props - The component props.
+ * @param {Object} props.weather - The weather object containing temperature and details.
+ * @param {string} props.weather.details - The weather details for the location.
+ * @param {string} props.weather.icon - The code representing the weather icon.
+ * @param {number} props.weather.temp - The current temperature.
+ * @param {number} props.weather.temp_min - The minimum temperature.
+ * @param {number} props.weather.temp_max - The maximum temperature.
+ * @param {number} props.weather.sunrise - The timestamp for sunrise.
+ * @param {number} props.weather.sunset - The timestamp for sunset.
+ * @param {number} props.weather.speed - The wind speed.
+ * @param {number} props.weather.humidity - The humidity level.
+ * @param {number} props.weather.feels_like - The "feels like" temperature.
+ * @param {string} props.weather.timezone - The timezone of the location.
+ * @returns {JSX.Element} The rendered TemperatureAndDetails component.
+ */
 function TemperatureAndDetails({
   weather: {
     details,

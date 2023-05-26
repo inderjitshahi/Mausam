@@ -1,6 +1,16 @@
 import React from "react";
 import { iconUrlFromCode } from "../services/weatherService";
 
+/**
+ * Renders a weather forecast component.
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The title of the forecast.
+ * @param {Object[]} props.items - An array of forecast items.
+ * @param {string} props.items[].title - The title of the forecast item.
+ * @param {string} props.items[].icon - The code representing the weather icon for the forecast item.
+ * @param {number} props.items[].temp - The temperature for the forecast item.
+ * @returns {JSX.Element} The rendered Forecast component.
+ */
 function Forecast({ title, items }) {
   console.log(items);
   return (
@@ -11,23 +21,6 @@ function Forecast({ title, items }) {
       <hr className="my-2" />
 
       <div className="flex flex-row items-center justify-between text-white">
-        {/* this commented code is what I teach during the video
-        it has missing key and will show error in browser console
-        so use the code below
-        what I have done is just added index to loop and
-        key attribute to the div element */}
-
-        {/* {items.map((item) => (
-          <div className="flex flex-col items-center justify-center">
-            <p className="font-light text-sm">{item.title}</p>
-            <img
-              src={iconUrlFromCode(item.icon)}
-              className="w-12 my-1"
-              alt=""
-            />
-            <p className="font-medium">{`${item.temp.toFixed()}°`}</p>
-          </div>
-        ))} */}
 
         {items.map((item, index) => (
           <div

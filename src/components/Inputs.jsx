@@ -2,21 +2,41 @@ import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 import { toast } from "react-toastify";
 
+/**
+ * Renders the input fields and buttons for searching weather information and changing units.
+ * @param {Object} props - The component props.
+ * @param {Function} props.setQuery - A function to set the search query for weather information.
+ * @param {string} props.units - The currently selected units for temperature.
+ * @param {Function} props.setUnits - A function to set the units for temperature.
+ * @returns {JSX.Element} The rendered Inputs component.
+ */
 function Inputs({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
 
+  /**
+   * Handles the change of temperature units.
+   * @param {Object} e - The event object.
+   */
   const handleUnitsChange = (e) => {
     const selectedUnit = e.currentTarget.name;
     if (units !== selectedUnit) setUnits(selectedUnit);
   };
 
+  /**
+   * Handles the click event for the search button.
+   * Sets the search query based on the entered city.
+   */
   const handleSearchClick = () => {
     if (city !== "") setQuery({ q: city });
   };
 
+  /**
+   * Handles the click event for the location button.
+   * Fetches the user's location and sets the search query based on the coordinates.
+   */
   const handleLocationClick = () => {
     if (navigator.geolocation) {
-      toast.info("Fetching users location.");
+      toast.info("Fetching user's location.");
       navigator.geolocation.getCurrentPosition((position) => {
         toast.success("Location fetched!");
         let lat = position.coords.latitude;
