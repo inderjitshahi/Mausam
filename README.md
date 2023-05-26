@@ -1,6 +1,4 @@
-# Mausam
-
-# Mausam
+# [Mausam](https://ismausam.vercel.app/)
 
 Mausam is a weather app that allows you to easily retrieve weather information for various locations. With Mausam, you can quickly check the current weather conditions, temperature, humidity, and more. Stay informed about the weather forecast and plan your activities accordingly. Whether you're traveling or simply want to know the weather in your area, Mausam has got you covered.
 ![Screenshot of Weather App](/public/app_logo.svg)
